@@ -6,15 +6,15 @@ new Song(
     "./assets/songs/amr-diab-weghalawtc.Com.mp3",
     "Weghalawtac",
     "Amr Diab",
-    "../assets/imgs/amr diab.jpeg",
-    "3:50"
+    "./assets/imgs/amr_diab.jpeg",
+    "3:50",
   );
   
   new Song(
     "./assets/songs/tamer-hosny-Aesh.Bsho2ak.Com.mp3",
     "Aesh Bsho2ak",
     "Tamer Hosny",
-    "./assets/imgs/tamer hosny.jpeg",
+    "./assets/imgs/tamer_hosny.jpeg",
     "3:50"
   );
 }

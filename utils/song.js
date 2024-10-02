@@ -1,5 +1,4 @@
 
-
 export default class Song{
    
   static list = [];
@@ -24,11 +23,5 @@ static activeSong(element) {
     element.classList.add("active-song");
   }
 }
-// new Song(
-//   ".assets/songs/amr-diab-weghalawtc.Com.mp3",
-//   "Weghalawtac",
-//   "Amr Diab",
-//   "assets/imgs/amr diab.jpeg",
-//   "3:50"
-// );
+
 

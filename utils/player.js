@@ -61,8 +61,8 @@ export default class Player {
       }
 
     
-      static autoNext(song_duration, currentTime) {
-        if (durationByMe === currentTime) {
+      static autoNext(durationByMs, currentTime) {
+        if (durationByMs === currentTime) {
           const currentSongIndex = songs.indexOf(Player.currentSong);
           const songDivs = document.querySelectorAll(".songs .container .song");
           let nextDiv = songDivs[currentSongIndex + 1];
