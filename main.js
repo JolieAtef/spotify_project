@@ -94,7 +94,13 @@ function renderAsideSongs() {
         Player.play();
       }
     });
-  
+
+    // Toggle loop on loop button click
+    loopBtn.addEventListener("click", () => {
+        loopBtn.classList.toggle("on-loop");
+    });
+
+
     // Move to the next song
     nextBtn.addEventListener("click", () => {
       Player.next(songs, Player.currentSong);

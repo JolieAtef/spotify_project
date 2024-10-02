@@ -45,6 +45,9 @@ body {
 
 /* End Global Rules */
 
+.on-loop{
+    color:var(--dark-black);
+}
 .container {
     width: 100%;
     display: grid;

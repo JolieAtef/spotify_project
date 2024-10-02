@@ -43,7 +43,17 @@ export default class Player {
         const findSongIndex = songsList.findIndex(
           song => song.id === currentSong.id
         );
+        
+        const loopBtn = document.querySelector(".buttons .loop");
         let nexSong = songsList[findSongIndex + 1];
+
+          if(loopBtn.classList.contains("on-loop")){
+            nexSong = songsList[findSongIndex];
+          }
+          else{
+             nexSong = songsList[findSongIndex + 1];
+          }
+        
         if (!nexSong) {
           nexSong = songsList[0];
         }
@@ -68,14 +78,22 @@ export default class Player {
       static autoNext(durationByMs, currentTime) {
         if (durationByMs === currentTime) {
           const currentSongIndex = songs.indexOf(Player.currentSong);
-          const songDivs = document.querySelectorAll(".songs .container .song");
+          const songDivs = document.querySelectorAll(".playlist .music-list .items .song");
+          const loopBtn = document.querySelector(".buttons .loop");
           let nextDiv = songDivs[currentSongIndex + 1];
+
+          if(loopBtn.classList.contains("on-loop")){
+              nextDiv = songDivs[currentSongIndex];
+          }else{
+              nextDiv = songDivs[currentSongIndex + 1];
+          }
+
           if (!nextDiv) {
             nextDiv = songDivs[0];
           }
+
           console.log(nextDiv);
           Song.activeSong(nextDiv);
-    
           this.next(songs, this.currentSong);
           this.play();
         }

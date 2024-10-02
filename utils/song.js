@@ -10,7 +10,6 @@ export default class Song{
     this.artist = artist;
     this.img = img;
     this.duarition = duarition || 0;
-    this.loop = false ;
     Song.list.push(this);    
 }
 
