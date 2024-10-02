@@ -28,7 +28,10 @@ export default class Player {
         });
     }
 
-
+    static toggleFavorite(song) {
+      // Logic to add or remove the song from favorites
+      console.log(`Toggled favorite for ${song.title}`);
+  }
     static getCurrentSong(song) {
         console.log("Data", song);
         const { img, src , title , artist} = song;
@@ -60,19 +63,17 @@ export default class Player {
         this.getCurrentSong(nexSong);
       }
 
-
-
       static previous(songsList, currentSong) {
         const findSongIndex = songsList.findIndex(
-          song => song.id === currentSong.id
+            song => song.id === currentSong.id
         );
     
         let nexSong = songsList[findSongIndex - 1];
         if (!nexSong) {
-          nexSong = songsList[songsList.length - 1];
+            nexSong = songsList[songsList.length - 1];
         }
         this.getCurrentSong(nexSong);
-      }
+    }
 
     
       static autoNext(durationByMs, currentTime) {

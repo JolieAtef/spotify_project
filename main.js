@@ -77,24 +77,47 @@ function renderAsideSongs() {
   
 
   function playerController() {
-    const playBtnIcon = document.querySelector(".buttons .play-button");
+    const pauseBtnIcon = document.querySelector(".buttons .pause-button");
     const nextBtn = document.querySelector(" .buttons .next");
     const prevBtn = document.querySelector(".buttons .prev");
     const favBtn = document.querySelector(".buttons .fav");
     const loopBtn = document.querySelector(".buttons .loop");
   
     // Toggle play/pause on play button click
+    let isPlaying = false;
+
     playBtn.addEventListener("click", () => {
-      playBtn.classList.toggle("on");
-      if (!playBtn.classList.contains("on")) {
-        playBtnIcon.src = "./assets/icons/play-solid.svg";
+      if (isPlaying) {
         Player.pause();
+        playBtn.style.display = 'inline'; // Show play icon
+        pauseBtnIcon.style.display = 'none'; // Hide pause icon
       } else {
-        playBtnIcon.src = "./assets/icons/pause-solid.svg";
         Player.play();
+        playBtn.style.display = 'none'; // Hide play icon
+        pauseBtnIcon.style.display = 'inline'; // Show pause icon
       }
+      isPlaying = !isPlaying; 
     });
 
+    // Event Listner for Pause Icon on click
+  pauseBtnIcon.addEventListener("click",()=>{
+  Player.pause();
+  playBtn.style.display = 'inline';
+  pauseBtnIcon.style.display = 'none';
+  isPlaying = false;
+ });
+
+ // Event Listner For Fav Icon
+ favBtn.addEventListener("click", () => {
+  if (Player.currentSong) {
+      Player.toggleFavorite(Player.currentSong);
+  }
+  if (favBtn.style.color === "black") {
+      favBtn.style.color = ""; // Reset to default color
+  } else {
+      favBtn.style.color = "black"; // Set to black if it's not
+  }
+});
     // Toggle loop on loop button click
     loopBtn.addEventListener("click", () => {
         loopBtn.classList.toggle("on-loop");
@@ -110,10 +133,10 @@ function renderAsideSongs() {
   
     // Move to the previous song
     prevBtn.addEventListener("click", () => {
-      Player.prev(songs, Player.currentSong);
+      Player.previous(songs, Player.currentSong);
       Player.play();
-      updateActiveSong();
-    });
+      updateActiveSong(); // Update the UI for the active song
+  });
   
     // Update progress bar and check for auto-next when song time updates
     playerAudio.addEventListener("timeupdate", () => {

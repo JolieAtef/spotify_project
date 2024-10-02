@@ -45,9 +45,10 @@ body {
 
 /* End Global Rules */
 
-.on-loop{
-    color:var(--dark-black);
+.on-loop {
+    color: var(--dark-black);
 }
+
 .container {
     width: 100%;
     display: grid;
@@ -284,6 +285,27 @@ body {
     position: relative;
 }
 
+/* Progress bar input style  */
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--white-color);
+    border-radius: 12px;
+    cursor: pointer;
+    width: 20rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--hover-color);
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+}
+
+
 .music-player .player-actions .buttons {
     display: flex;
     justify-content: center;
@@ -297,6 +319,13 @@ body {
 
 .container .right-section .music-player .player-actions .buttons .play-button {
     padding: 16px;
+    background-color: var(--white-color);
+    color: var(--dark-grey);
+    border-radius: 18px;
+}
+
+.container .right-section .music-player .player-actions .buttons .pause-button {
+    padding: 10px;
     background-color: var(--white-color);
     color: var(--dark-grey);
     border-radius: 18px;
