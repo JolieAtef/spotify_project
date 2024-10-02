@@ -9,6 +9,17 @@ const playBtn = document.querySelector(".buttons .play-button");
 const playerAudio = document.querySelector(".song-info audio");
 const playerBar = document.querySelector(".progress .bar input");
 
+// Navbar toggle menu
+
+const menuOpen = document.getElementById('menu-open');
+const menuClose = document.getElementById('menu-close');
+const sidebar = document.querySelector('.container .sidebar');
+
+menuOpen.addEventListener('click', () => sidebar.style.left = '0');
+
+menuClose.addEventListener('click', () => sidebar.style.left = '-100%');
+
+
 // Initialize with a random song 
 window.addEventListener("DOMContentLoaded", () => {
     const randomIndex = Math.floor(Math.random() * songs.length);
@@ -47,10 +58,6 @@ function renderAsideSongs() {
 
          <div class="actions">
             <p>${duarition}</p>
-             <div class="icon">
-             <i class='bx bxs-right-arrow'></i>
-             </div>
-            <i class='bx bxs-heart'></i>
         </div>
       `;
 
@@ -143,81 +150,4 @@ function renderAsideSongs() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Navbar toggle menu
-// const menuOpen = document.getElementById('menu-open');
-// const menuClose = document.getElementById('menu-close');
-// const sidebar = document.querySelector('.container .sidebar');
-
-// menuOpen.addEventListener('click', () => sidebar.style.left = '0');
-
-// menuClose.addEventListener('click', () => sidebar.style.left = '-100%');
-
-// Songs functions 
 
