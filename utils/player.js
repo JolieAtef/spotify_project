@@ -3,6 +3,8 @@ const songs = Song.list;
 
  const Song_Image = document.querySelector(".song-info img");
  const Song_Audio = document.querySelector(".song-info audio");
+ const Song_Title = document.querySelector(".song-info .description h3")
+ const Song_Artist = document.querySelector(".song-info .description h5")
 
 
 export default class Player {
@@ -18,7 +20,7 @@ export default class Player {
     }
 
     static bar() {
-        const Audio_Bar = document.querySelector(".player .controller .bar input");
+        const Audio_Bar = document.querySelector(".progress .bar input");
         Audio_Bar.addEventListener("input", e => {
           console.log(e.target.value);
           Audio_Bar.setAttribute("value", e.target.value);
@@ -29,9 +31,11 @@ export default class Player {
 
     static getCurrentSong(song) {
         console.log("Data", song);
-        const { img, src } = song;
+        const { img, src , title , artist} = song;
         Song_Image.src = img;
         Song_Audio.src = src;
+        Song_Title.textContent=title;
+        Song_Artist.textContent= artist;
         Player.currentSong = song;
       }
 
