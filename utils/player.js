@@ -1,8 +1,8 @@
 import Song from "./song.js";
 const songs = Song.list;
 
-//  const Song_Image = document.querySelector(".player .img img");
-//  const Song_Audio = document.querySelector(".player .img audio");
+ const Song_Image = document.querySelector(".song-info img");
+ const Song_Audio = document.querySelector(".song-info audio");
 
 
 export default class Player {
