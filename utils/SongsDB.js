@@ -17,6 +17,13 @@ new Song(
     "./assets/imgs/tamer_hosny.jpeg",
     "3:50"
   );
+  new Song(
+    "./assets/songs/sheriene-nassay.Com.mp3",
+    "Nassay",
+    "Sherine ",
+    "./assets/imgs/sherine.jpeg",
+    "3:17"
+  );
 }
 
 
