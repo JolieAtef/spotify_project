@@ -1,77 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Spotify</title>
+    <link
+      rel="shortcut icon"
+      href="assets/imgs/spotify-icon.png"
+      type="image/x-icon"
+    />
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
-            rel='stylesheet'>
-        <link rel="stylesheet" href="style.css">
-        <title>Spotify</title>
-        <link rel="shortcut icon" href="assets/imgs/spotify-icon.png"
-            type="image/x-icon">
-    </head>
+  <body>
+    <div class="container">
+      <!-- Start Sidebar-->
+      <aside class="sidebar">
+        <div class="logo">
+          <button class="menu-btn" id="menu-close">
+            <i class="bx bx-log-out-circle"></i>
+          </button>
+          <i class="bx bx-pulse"></i>
+          <a href="index.html">Spotify</a>
+        </div>
 
-    <body>
-        <div class="container">
+        <div class="menu">
+          <h5>Library</h5>
+          <ul>
+            <li>
+              <i class="bx bxs-bolt-circle"></i>
+              <a href="#">Explore</a>
+            </li>
+            <li>
+              <i class="bx bxs-volume-full"></i>
+              <a href="#">Genres</a>
+            </li>
+            <li>
+              <i class="bx bxs-photo-album"></i>
+              <a href="#">Albums</a>
+            </li>
+            <li>
+              <i class="bx bxs-heart"></i>
+              <a href="#">Favourites</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <!-- Start Sidebar-->
 
-            <!-- Start Sidebar-->
-            <aside class="sidebar">
-                <div class="logo">
-                    <button class="menu-btn" id="menu-close">
-                        <i class='bx bx-log-out-circle'></i>
-                    </button>
-                    <i class='bx bx-pulse'></i>
-                    <a href="index.html">Spotify</a>
-                </div>
+      <main>
+        <!--Start Header-->
+        <header>
+          <div class="nav-links">
+            <button class="menu-btn" id="menu-open">
+              <i class="bx bx-menu"></i>
+            </button>
+            <a href="#">Music</a>
+            <a href="#">Live</a>
+            <a href="#">Podcast</a>
+          </div>
+        </header>
+        <!--End Header-->
 
-                <div class="menu">
-                    <h5>Library</h5>
-                    <ul>
-                        <li>
-                            <i class='bx bxs-bolt-circle'></i>
-                            <a href="#">Explore</a>
-                        </li>
-                        <li>
-                            <i class='bx bxs-volume-full'></i>
-                            <a href="#">Genres</a>
-                        </li>
-                        <li>
-                            <i class='bx bxs-photo-album'></i>
-                            <a href="#">Albums</a>
-                        </li>
-                        <li>
-                            <i class='bx bxs-heart'></i>
-                            <a href="#">Favourites</a>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-            <!-- Start Sidebar-->
+        <!--Start Playlist Songs -->
+        <div class="playlist">
+          <div class="music-list">
+            <div class="header">
+              <h5>Top Songs</h5>
+            </div>
 
-            <main>
-                <!--Start Header-->
-                <header>
-                    <div class="nav-links">
-                        <button class="menu-btn" id="menu-open">
-                            <i class='bx bx-menu'></i>
-                        </button>
-                        <a href="#">Music</a>
-                        <a href="#">Live</a>
-                        <a href="#">Podcast</a>
-                    </div>
-                </header>
-                <!--End Header-->
-
-                <!--Start Playlist Songs -->
-                <div class="playlist">
-                    <div class="music-list">
-                        <div class="header">
-                            <h5>Top Songs</h5>
-                        </div>
-
-                        <div class="items">
-                            <!-- <div class="song">
+            <div class="items">
+              <!-- <div class="song">
                                 <div class="info">
                                     <img src="assets/imgs/amr diab.jpeg">
                                     <div class="details">
@@ -91,52 +94,54 @@
                                     <i class='bx bxs-heart'></i>
                                 </div>
                             </div> -->
-                        </div>
-                    </div>
-                </div>
-                <!--End Playlist Songs -->
-            </main>
-
-            <!--Start Current Song -->
-            <div class="right-section">
-                <div class="music-player">
-                    <div class="top-section">
-                        <div class="header">
-                            <h5>Player</h5>
-                            <i class='bx bxs-playlist'></i>
-                        </div>
-                        <div class="song-info">
-                            <img src>
-                            <audio src></audio>
-                            <div class="description">
-                                <h3></h3>
-                                <h5></h5>
-                            </div>
-                            <div class="progress">
-                                <div class="bar">
-                                    <input type="range">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="player-actions">
-                        <div class="buttons">
-                            <i class='bx bx-repeat loop'></i>
-                            <i class='bx bx-first-page prev'></i>
-                            <div class="play-pause-container">
-                                <i class='bx bxs-right-arrow play-button'></i>
-                                <i class='bx bx-pause pause-button'
-                                    style="font-size:30px;display: none;"></i>
-                            </div>
-                            <i class='bx bx-last-page next'></i>
-                            <i class='bx bxs-heart fav'></i>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!--End Playlist Songs -->
+          </div>
         </div>
-        <script type="module" src="./main.js"></script>
-    </body>
+        <!--End Playlist Songs -->
+      </main>
+
+      <!--Start Current Song -->
+      <div class="right-section">
+        <div class="music-player">
+          <div class="top-section">
+            <div class="header">
+              <h5>Player</h5>
+              <i class="bx bxs-playlist"></i>
+            </div>
+            <div class="song-info">
+              <img src />
+              <audio src></audio>
+              <div class="description">
+                <h3></h3>
+                <h5></h5>
+              </div>
+              <div class="progress">
+                <div class="bar">
+                  <input type="range" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="player-actions">
+            <div class="buttons">
+              <i class="bx bx-repeat loop"></i>
+              <i class="bx bx-first-page prev"></i>
+              <div class="play-pause-container">
+                <i class="bx bxs-right-arrow play-button"></i>
+                <i
+                  class="bx bx-pause pause-button"
+                  style="font-size: 30px; display: none"
+                ></i>
+              </div>
+              <i class="bx bx-last-page next"></i>
+              <i class="bx bxs-heart fav"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Playlist Songs -->
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>
